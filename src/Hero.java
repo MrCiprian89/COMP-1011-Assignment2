@@ -14,7 +14,7 @@ public class Hero {
 	
 //PRIVATE METHODS ####################################################################
 	//used to roll the numbers in each method
-	private int randomRoll(int maxNumber){
+	protected int randomRoll(int maxNumber){
 		int numberRolled = (int) Math.floor((Math.random()*maxNumber +1));
 		return numberRolled;
 		
