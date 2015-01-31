@@ -21,16 +21,19 @@ public class SuperHero extends Hero {
 	//PRIVATE METHODS #####################################################################	
 		private ArrayList<String> generateRandomPowers(int numberOfPowers){
 			
+			//ArrayList to store the returned powers
 			ArrayList<String> superPowers = new ArrayList<String>(numberOfPowers);
+			//ArrayList that store all possible powers to be generated
 			ArrayList<String> superPowersList = new ArrayList<String>(
 				    Arrays.asList("Super Speed", "Super Strength", "Body Armour", "Flight" , "Fire Generation", "Weather Control"));
-			int powersGenerated = superPowersList.size();//variable to generate a random number that will be within the size of possible powers
-			
+			//variable to control the random index taken from superPowerList, keeps within the current size of the ArrayList
+			int powersGenerated = superPowersList.size();
+		    //for loop that removes a power from superPowerList and adds it to superPowers
 			for(int i = numberOfPowers; i>=1 ;i--){
 			     int roll = (randomRoll(powersGenerated))-1;//roll a random number within the size of the array left over
 			     superPowers.add( superPowersList.remove(roll)); 
-			    		 powersGenerated--;
+			     powersGenerated--;//removes 1 from the roll because the ArrayList is reduced by 1 after being removed.
 			}
 			return superPowers;		
-		}
+		}//END generateRandomPowers
 }
